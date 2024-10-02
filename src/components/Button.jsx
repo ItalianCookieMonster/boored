@@ -4,7 +4,7 @@ const Button = ({ type, text, handleClick }) => {
         <button 
             type={type} 
             onClick={handleClick}
-            className="bg-secondary text-white rounded-xl px-8 py-2 hover:bg-secondary-hover"
+            className="bg-secondary text-white rounded-2xl px-8 py-4 hover:bg-secondary-hover"
             >{text}</button>
     )
 }
