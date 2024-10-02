@@ -8,19 +8,18 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: 'hsl(252, 89%, 63%)',
-          hover: 'hsl(252, 89%, 73%)',
+          DEFAULT: 'var(--primary-hsl)', 
+          hover: 'var(--primary-hover-hsl)', 
         },
-        accent: 'hsl(240, 14%, 97%)',
-        text: 'hsl(0, 0%, 1%)',
+        accent: 'var(--accent-hsl)',
+        text: 'var(--text-hsl)', 
         secondary: {
-          DEFAULT: 'hsl(0, 0%, 11%)',
-          hover: 'hsl(0, 0%, 21%)',
+          DEFAULT: 'var(--secondary-hsl)',
+          hover: 'var(--secondary-hover-hsl)',
         },
-        background: 'hsl(240, 5%, 95%)',
+        background: 'var(--background-hsl)',
       },
-    }
-
+    },
   },
   plugins: [],
 }

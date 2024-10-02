@@ -6,7 +6,7 @@
   --primary-hsl: hsl(252, 89%, 63%); /* #804ef6 */
   --primary-hover-hsl: hsl(252, 89%, 73%); /* Colore più chiaro per hover */
 
-  --accent-hsl: hsl(240, 14%, 97%); /* #f6f6f8 */
+  --accent-hsl: hsl(240, 5%, 88%); /* #f6f6f8 */
   --text-hsl: hsl(0, 0%, 1%); /* #020202 */
   
   --secondary-hsl: hsl(0, 0%, 11%); /* #1d1d1d */
@@ -17,3 +17,5 @@
 body {
   background-color: var(--background-hsl);
 }
+
+
