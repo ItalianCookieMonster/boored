@@ -1,88 +1,91 @@
 # Prova Tècnica - Aplicació d’Activitats
 
-Aquest projecte és una prova tècnica on es mostra una aplicació que permet als usuaris seleccionar filtres i generar activitats a partir d’una API. Les activitats es poden mostrar de manera aleatòria o en funció d’un filtre seleccionat.
+Aquest projecte és una prova tècnica per generar activitats a partir d’una API, seleccionant filtres específics o mostrant activitats aleatòries.
 
 ## Índex
 
 	1.	Descripció del Projecte
-	2.	Tecnologies Utilitzades
-	3.	Funcionalitats
-	4.	Instal·lació
+ 	2. 	Com He Resolut la Prova Tècnica
+	3.	Libreries Utilitzades
+	4.	Instal·lació	
 	5.	Ús
-	6.	Contribució
-	7.	Licència
+ 	6.	Generar Activitats
 
-## Descripció del Projecte
+Descripció del Projecte
 
-L’aplicació permet als usuaris seleccionar diferents tipus de filtres per generar activitats mitjançant una API externa. Es poden seleccionar categories com Social, Educació, Cuinar, etc., i l’aplicació mostrarà activitats en funció del filtre escollit o una activitat aleatòria si no es selecciona cap filtre.
+Aquest projecte permet als usuaris seleccionar diferents filtres per generar activitats mitjançant una API externa. Si l’usuari no selecciona cap filtre, es genera una activitat aleatòria. El projecte utilitza una interfície moderna amb components de React i un estil personalitzat amb Tailwind CSS.
 
-## Tecnologies Utilitzades
+## Com He Resolut la Prova Tècnica
 
-	•	React: Framework JavaScript per a la construcció de la interfície d’usuari.
-	•	Vite: Bundler per a un desenvolupament ràpid.
-	•	Fetch API: Per fer peticions a l’API externa.
-	•	Tailwind CSS: Per al disseny responsiu de l’aplicació.
+1. Selecció de filtres d’activitats:
+He implementat un conjunt de “chips” que permet als usuaris seleccionar un filtre. Quan un filtre és seleccionat, es fa una petició a l’API amb el tipus d’activitat corresponent. Si no es selecciona cap filtre, es genera una activitat aleatòria.
 
-## Funcionalitats
+2. Gestió de les respostes de l’API:
+L’API pot retornar un sol objecte o una llista d’activitats, segons el tipus de petició. Per gestionar això, primer verifico si la resposta és un array o un objecte. Si és un array, selecciono una activitat aleatòria de la llista; si és un objecte, simplement mostro l’activitat directament.
 
-	•	Selecció de filtres d’activitats.
-	•	Generació d’activitats aleatòries o basades en el filtre seleccionat.
-	•	Traducció d’activitats a català.
-	•	Interfície d’usuari moderna i responsiva.
+3. Gestió del problema de CORS:
+Vaig trobar un problema amb les peticions a l’API a causa de les restriccions de CORS. Per solucionar-ho, vaig configurar un proxy local utilitzant Vite, que reescriu les peticions fetes a l’API externa, permetent que les peticions funcionin correctament en un entorn de desenvolupament local.
+
+## Libreries Utilitzades
+
+	•	React: Per a la construcció de la interfície d’usuari.
+	•	Vite: Com a bundler per al desenvolupament ràpid i lleuger.
+	•	Tailwind CSS: Per al disseny estilitzat i responsiu.
+	•	Fetch API: Per realitzar peticions a l’API externa.
 
 ## Instal·lació
 
-### Requisits previs
+Requisits previs
 
 Abans de començar, assegura’t de tenir instal·lats els següents programes:
 
 	•	Node.js: Descarregar Node.js
 	•	Git: Descarregar Git
 
-### Clonar el repositori
+Clonar el repositori
 
-  1.	Obre un terminal i executa la comanda següent per clonar el repositori:
+	
+ 1.	Clona el repositori executant aquesta comanda al terminal:
 
-``git clone git@github.com:ItalianCookieMonster/boored.git``
+	```
+	git clone git@github.com:ItalianCookieMonster/boored.git
+	
+ 	```
 
-  2.	Entra al directori del projecte:
 
-`` cd el-teu-repositori ``
+2.	Accedeix al directori del projecte:
+
+
+	```
+	cd boored
+	
+ 	```
 
 
 
 Instal·lar les dependències
 
-Un cop estiguis dins del directori del projecte, executa la comanda següent per instal·lar totes les dependències necessàries:
+Un cop dins del directori del projecte, executa aquesta comanda per instal·lar totes les dependències:
 
-``npm install``
+```
+npm install
+```
+
 
 ## Ús
 
-Per executar l’aplicació en un entorn de desenvolupament, executa la comanda següent:
+Després d’haver instal·lat totes les dependències, pots executar el projecte localment amb la següent comanda:
+```
+npm run dev
+```
 
-``npm run dev``
-
-Això obrirà el servidor de desenvolupament. Accedeix a l’aplicació mitjançant el navegador web a la URL:
+Això obrirà el servidor de desenvolupament a la URL:
 
 http://localhost:5173
 
-Generar Activitats
+## Generar Activitats
 
-	1.	Selecciona un filtre d’activitat fent clic en una de les “chips” que apareixen a la interfície.
-	2.	Fes clic al botó Generar per obtenir una activitat.
-	3.	Si no selecciones cap filtre, es generarà una activitat aleatòria.
-
-Contribució
-
-Si vols contribuir a aquest projecte, segueix aquests passos:
-
-	1.	Fes un fork del repositori.
-	2.	Crea una nova branca (git checkout -b feature/nova-funcionalitat).
-	3.	Fes els canvis necessaris i fes un commit (git commit -m 'Afegeix nova funcionalitat').
-	4.	Envia els canvis a la teva branca (git push origin feature/nova-funcionalitat).
-	5.	Crea una pull request.
-
-
-
+	•	Selecciona una de les “chips” per triar un tipus d’activitat.
+	•	Fes clic al botó Generar per obtenir una activitat basada en el filtre seleccionat.
+	•	Si no selecciones cap filtre, es generarà una activitat aleatòria.
 
