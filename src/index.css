@@ -14,3 +14,6 @@
 
   --background-hsl: hsl(240, 5%, 95%); /* Un bianco leggermente grigiastro */
 }
+body {
+  background-color: var(--background-hsl);
+}
